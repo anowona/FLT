@@ -17,7 +17,6 @@ if (empty($backward)) {
         <th>prix</th>
         <th>validité</th>
         <th>rapport_prixDonnées</th>
-        <th>rapport_prixValidité</th>
         <th>rapport_prixSms</th>
         <th>rapport_prixVoix</th>
     </tr>
@@ -31,7 +30,6 @@ if (empty($backward)) {
             <td> <?php echo $fetcht["prix__fcfa_"] ?> </td>
             <td> <?php echo $fetcht["validité"] ?> </td>
             <td> <?php echo $fetcht["rapport_prixDonnées"] ?> </td>
-            <td> <?php echo $fetcht["rapport_prixValidité"] ?> </td>
             <td> <?php echo $fetcht["rapport_prixSms"] ?> </td>
             <td> <?php echo $fetcht["rapport_prixVoix"] ?> </td>
         </tr>
