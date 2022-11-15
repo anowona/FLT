@@ -3,7 +3,8 @@ session_start();
 include("../../config/config.inc.php");
 include("../inc.php");
 
-
+$selectt = $bdd->prepare("select * from togocel");
+$selectt->execute();
 
 $title = "tables";
 $metaKeywords = "";
