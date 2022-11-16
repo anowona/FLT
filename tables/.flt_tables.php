@@ -5,10 +5,13 @@ if (empty($backward)) {
 }
 //////////////////////////////////main////////////////////////////////////////////////
 
+$selectt = $bdd->prepare("select * from togocel");
+$selectt->execute();
+
 ?>
 
 <table>
-    <tr>
+    <tr id="tablehead">
         <th>codeUSSD</th>
         <th>codeForfait</th>
         <th>voix</th>
@@ -28,7 +31,7 @@ if (empty($backward)) {
             <td> <?php echo $fetcht["sms__sms_"] ?> </td>
             <td> <?php echo $fetcht["données__mo_"] ?> </td>
             <td> <?php echo $fetcht["prix__fcfa_"] ?> </td>
-            <td> <?php echo $fetcht["validité"] ?> </td>
+            <td title="<?php echo $fetcht["disponibilité"] ?>"> <?php echo $fetcht["validité__j_"] ?> </td>
             <td> <?php echo $fetcht["rapport_prixDonnées"] ?> </td>
             <td> <?php echo $fetcht["rapport_prixSms"] ?> </td>
             <td> <?php echo $fetcht["rapport_prixVoix"] ?> </td>

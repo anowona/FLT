@@ -3,8 +3,7 @@ session_start();
 include("../../config/config.inc.php");
 include("../inc.php");
 
-//$select = $bdd->prepare("SELECT * FROM `dowowo` ORDER BY `dowowo`.`nko` ASC");
-//$select->execute();
+
 
 if (isset($_POST["insert"])) {
 
@@ -15,6 +14,7 @@ if (isset($_POST["insert"])) {
     $données = $_POST["données"];
     $prix = $_POST["prix"];
     $validité = $_POST["validité"];
+    $disponibilité = $_POST["disponibilité"];
 
     $rapport_donnéesPrix = $données / $prix;
     $rapport_prixDonnées = $prix / $données;
@@ -37,9 +37,11 @@ if (isset($_POST["insert"])) {
     $rapport_smsVoix = $sms / $voix;
     $rapport_voixSms = $voix / $sms;
 
-    $inserta = $bdd->prepare("insert into test2 (codeUSSD, codeForfait, voix__f_, sms__sms_, données__mo_, prix__fcfa_, validité, rapport_donnéesPrix, rapport_prixDonnées, rapport_validitéPrix, rapport_prixValidité, rapport_validitéDonnées, rapport_donnéesValidité, rapport_prixSms, rapport_smsPrix, rapport_prixVoix, rapport_voixPrix, rapport_validitéSms, rapport_smsValidité, rapport_validitéVoix, rapport_voixValidité, rapport_donnéesSms, rapport_smsDonnées, rapport_donnéesVoix, rapport_voixDonnées, rapport_smsVoix, rapport_voixSms) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $inserta->execute(array($codeUSSD, $codeForfait, $voix, $sms, $données, $prix, $validité, $rapport_donnéesPrix, $rapport_prixDonnées, $rapport_validitéPrix, $rapport_prixValidité, $rapport_validitéDonnées, $rapport_donnéesValidité, $rapport_prixSms, $rapport_smsPrix, $rapport_prixVoix, $rapport_voixPrix, $rapport_validitéSms, $rapport_smsValidité, $rapport_validitéVoix, $rapport_voixValidité, $rapport_donnéesSms, $rapport_smsDonnées, $rapport_donnéesVoix, $rapport_voixDonnées, $rapport_smsVoix, $rapport_voixSms));
+    $inserta = $bdd->prepare("insert into togocel (codeUSSD, codeForfait, voix__f_, sms__sms_, données__mo_, prix__fcfa_, validité__j_, disponibilité, rapport_donnéesPrix, rapport_prixDonnées, rapport_validitéPrix, rapport_prixValidité, rapport_validitéDonnées, rapport_donnéesValidité, rapport_prixSms, rapport_smsPrix, rapport_prixVoix, rapport_voixPrix, rapport_validitéSms, rapport_smsValidité, rapport_validitéVoix, rapport_voixValidité, rapport_donnéesSms, rapport_smsDonnées, rapport_donnéesVoix, rapport_voixDonnées, rapport_smsVoix, rapport_voixSms) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $inserta->execute(array($codeUSSD, $codeForfait, $voix, $sms, $données, $prix, $validité, $disponibilité, $rapport_donnéesPrix, $rapport_prixDonnées, $rapport_validitéPrix, $rapport_prixValidité, $rapport_validitéDonnées, $rapport_donnéesValidité, $rapport_prixSms, $rapport_smsPrix, $rapport_prixVoix, $rapport_voixPrix, $rapport_validitéSms, $rapport_smsValidité, $rapport_validitéVoix, $rapport_voixValidité, $rapport_donnéesSms, $rapport_smsDonnées, $rapport_donnéesVoix, $rapport_voixDonnées, $rapport_smsVoix, $rapport_voixSms));
 }
+
+
 
 $title = "adminFlT";
 $metaKeywords = "";
