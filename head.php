@@ -13,7 +13,7 @@
     ?>
     <?php if ($_SERVER["HTTP_HOST"] == "localhost") { ?>
         <link rel="icon" type="image/x-icon" href="/flt/favicono.ico">
-    <?php } else if ($_SERVER["HTTP_HOST"] == "detailsenvrac.com") { ?>
+    <?php } else if ($_SERVER["HTTP_HOST"] == "forfaitsletogo.detailsenvrac.com") { ?>
         <link rel="icon" type="image/x-icon" href="/flt/faviconi.ico">
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DTN606FDD"></script>
