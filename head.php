@@ -15,8 +15,8 @@
         <link rel="icon" type="image/x-icon" href="/flt/favicono.ico">
     <?php } else if ($_SERVER["HTTP_HOST"] == "detailsenvrac.com") { ?>
         <link rel="icon" type="image/x-icon" href="/flt/faviconi.ico">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSYEDWH58K"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DTN606FDD"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
 
@@ -25,7 +25,7 @@
             }
             gtag('js', new Date());
 
-            gtag('config', 'G-LSYEDWH58K');
+            gtag('config', 'G-2DTN606FDD');
         </script>
     <?php } ?>
 </head>
