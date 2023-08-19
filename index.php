@@ -1,4 +1,5 @@
 <?php
-
-header("Location: ./main/");
+header("Location: flt");
 exit;
+?>
+ff
