@@ -3,8 +3,6 @@ session_start();
 include("../../config/config.inc.php");
 include("../inc.php");
 
-$select = $bdd->prepare("SELECT * FROM `dowowo` ORDER BY `dowowo`.`nko` ASC");
-$select->execute();
 
 $title = "FlT";
 $metaKeywords = "";
