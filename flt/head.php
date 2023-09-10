@@ -8,6 +8,7 @@
     <title><?php echo $title ?> -forfaitsletogo</title>
     <meta name="keywords" content="<?php echo $metaKeywords ?>">
     <meta name="description" content="<?php echo $metaDescription ?>">
+    <?php include("js.flt.htm") ?>
     <?php
     //////////////////////////////////////////////////////////////////////// 
     ?>
@@ -15,18 +16,6 @@
         <link rel="icon" type="image/x-icon" href="/flt/favicono.ico">
     <?php } else if ($_SERVER["HTTP_HOST"] == "forfaitsletogo.detailsenvrac.com") { ?>
         <link rel="icon" type="image/x-icon" href="/flt/faviconi.ico">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DTN606FDD"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-
-            gtag('config', 'G-2DTN606FDD');
-        </script>
     <?php } ?>
 </head>
 

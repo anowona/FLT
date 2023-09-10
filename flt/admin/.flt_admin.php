@@ -17,83 +17,83 @@ if (isset($_POST["update"])) {
         $validité = $fetchu["validité__j_"];
 
 
-        $rapport_donnéesPrix = $données / $prix;
+        $rapport_donnéesPrix = dividement($données, $prix);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_donnéesPrix` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_donnéesPrix, $codeUSSD));
 
-        $rapport_prixDonnées = $prix / $données;
+        $rapport_prixDonnées = dividement($prix, $données);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_prixDonnées` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_prixDonnées, $codeUSSD));
 
-        $rapport_validitéPrix = $validité / $prix;
+        $rapport_validitéPrix = dividement($validité, $prix);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_validitéPrix` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_validitéPrix, $codeUSSD));
 
-        $rapport_prixValidité = $prix / $validité;
+        $rapport_prixValidité = dividement($prix, $validité);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_prixValidité` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_prixValidité, $codeUSSD));
 
-        $rapport_validitéDonnées = $validité / $données;
+        $rapport_validitéDonnées = dividement($validité, $données);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_validitéDonnées` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_validitéDonnées, $codeUSSD));
 
-        $rapport_donnéesValidité = $données / $validité;
+        $rapport_donnéesValidité = dividement($données, $validité);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_donnéesValidité` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_donnéesValidité, $codeUSSD));
 
-        $rapport_prixSms = $prix / $sms;
+        $rapport_prixSms = dividement($prix, $sms);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_prixSms` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_prixSms, $codeUSSD));
 
-        $rapport_smsPrix = $sms / $prix;
+        $rapport_smsPrix = dividement($sms, $prix);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_smsPrix` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_smsPrix, $codeUSSD));
 
-        $rapport_prixVoix = $prix / $voix;
+        $rapport_prixVoix = dividement($prix, $voix);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_prixVoix` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_prixVoix, $codeUSSD));
 
-        $rapport_voixPrix = $voix / $prix;
+        $rapport_voixPrix = dividement($voix, $prix);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_voixPrix` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_voixPrix, $codeUSSD));
 
-        $rapport_validitéSms = $validité / $sms;
+        $rapport_validitéSms = dividement($validité, $sms);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_validitéSms` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_validitéSms, $codeUSSD));
 
-        $rapport_smsValidité = $sms / $validité;
+        $rapport_smsValidité = dividement($sms, $validité);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_smsValidité` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_smsValidité, $codeUSSD));
 
-        $rapport_validitéVoix = $validité / $voix;
+        $rapport_validitéVoix = dividement($validité, $voix);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_validitéVoix` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_validitéVoix, $codeUSSD));
 
-        $rapport_voixValidité = $voix / $validité;
+        $rapport_voixValidité = dividement($voix, $validité);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_voixValidité` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_voixValidité, $codeUSSD));
 
-        $rapport_donnéesSms = $données / $sms;
+        $rapport_donnéesSms = dividement($données, $sms);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_donnéesSms` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_donnéesSms, $codeUSSD));
 
-        $rapport_smsDonnées = $sms / $données;
+        $rapport_smsDonnées = dividement($sms, $données);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_smsDonnées` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_smsDonnées, $codeUSSD));
 
-        $rapport_donnéesVoix = $données / $voix;
+        $rapport_donnéesVoix = dividement($données, $voix);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_donnéesVoix` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_donnéesVoix, $codeUSSD));
 
-        $rapport_voixDonnées = $voix / $données;
+        $rapport_voixDonnées = dividement($voix, $données);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_voixDonnées` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_voixDonnées, $codeUSSD));
 
-        $rapport_smsVoix = $sms / $voix;
+        $rapport_smsVoix = dividement($sms, $voix);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_smsVoix` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_smsVoix, $codeUSSD));
 
-        $rapport_voixSms = $voix / $sms;
+        $rapport_voixSms = dividement($voix, $sms);
         $updateu = $bdd->prepare("UPDATE `togocel` SET `rapport_voixSms` = ? WHERE `togocel`.`codeUSSD` = ?");
         $updateu->execute(array($rapport_voixSms, $codeUSSD));
     }

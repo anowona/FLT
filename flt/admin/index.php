@@ -3,7 +3,15 @@ session_start();
 include("../../config/config.inc.php");
 include("../inc.php");
 
-
+function dividement($un, $deux)
+{
+    if (($un == 0) or ($deux == 0)) {
+        $trois = 0;
+    } else {
+        $trois = $un / $deux;
+    }
+    return $trois;
+}
 
 if (isset($_POST["insert"])) {
 
@@ -15,16 +23,6 @@ if (isset($_POST["insert"])) {
     $prix = $_POST["prix"];
     $validité = $_POST["validité"];
     $disponibilité = $_POST["disponibilité"];
-
-    function dividement($un, $deux)
-    {
-        if (($un == 0) or ($deux == 0)) {
-            $trois = 0;
-        } else {
-            $trois = $un / $deux;
-        }
-        return $trois;
-    }
 
     $rapport_donnéesPrix = dividement($données, $prix);
     $rapport_prixDonnées = dividement($prix, $données);
