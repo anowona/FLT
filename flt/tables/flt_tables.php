@@ -86,6 +86,7 @@ switch ($orderr) {
 <br>
 <table>
     <tr id="tablehead">
+        <th>Update</th>
         <th>codeUSSD</th>
         <th>codeForfait</th>
         <th>voix</th>
@@ -101,6 +102,7 @@ switch ($orderr) {
     </tr>
     <?php while ($fetcht = $selectt->fetch()) { ?>
         <tr>
+            <td> <a href="../admin/index.php?idForfait=<?php echo $fetcht["idForfait"] ?>">Update</a> </td>
             <td> <?php echo $fetcht["codeUSSD"] ?> </td>
             <td> <?php echo $fetcht["codeForfait"] ?> </td>
             <td> <?php echo $fetcht["voix__f_"] ?> f </td>

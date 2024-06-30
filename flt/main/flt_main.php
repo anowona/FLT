@@ -9,5 +9,5 @@ if (empty($backward)) {
 
 main
 
-<?php include("../tables/.flt_tables.php"); ?>
-<?php include("../ussd/.flt_ussd.php"); ?>
+<?php include("../tables/flt_tables.php"); ?>
+<?php include("../ussd/flt_ussd.php"); ?>
