@@ -2,6 +2,8 @@
 
 $_SESSION['localhost'] = "yes";
 
-$url = "mysql:host=;dbname=aperso_flt;charset=utf8";
-$login = "root";
-$password = "";
+$host = "localhost";
+
+$url = "mysql:host=;dbname=4630022_projetflt;charset=utf8";
+$login = "4630022_projetflt";
+$password = "1a5+adi?8YO7mKo5";

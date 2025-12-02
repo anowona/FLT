@@ -1,0 +1,75 @@
+// Example data: Array of gear items with min and max AP
+const gear = [
+    { type: "Amulet", name: "PEN: Kalis Amulet", minAP: 109, maxAP: 123 },
+    { type: "Amulet", name: "PEN: Rosar Amulet", minAP: 113, maxAP: 118 },
+    { type: "Amulet", name: "PEN: Yuria Amulet", minAP: 112, maxAP: 117 },
+    { type: "Amulet", name: "PEN: Krea Amulet", minAP: 113, maxAP: 115 },
+    { type: "Amulet", name: "PEN: Azwell Amulet", minAP: 110, maxAP: 114 },
+    { type: "Amulet", name: "PEN: Bares Amulet", minAP: 107, maxAP: 111 },
+    { type: "Amulet", name: "PEN: Ain Amulet", minAP: 106, maxAP: 110 },
+    { type: "Amulet", name: "PEN: Elsh Amulet", minAP: 106, maxAP: 110 },
+    { type: "Amulet", name: "PEN: Seleth Amulet", minAP: 106, maxAP: 110 },
+    { type: "Amulet", name: "PEN: Ultimate Kalis Amulet", minAP: 109, maxAP: 127 },
+    { type: "Amulet", name: "PEN: Ultimate Rosar Amulet", minAP: 113, maxAP: 122 },
+    { type: "Amulet", name: "PEN: Ultimate Yuria Amulet", minAP: 112, maxAP: 121 },
+    { type: "Amulet", name: "PEN: Ultimate Azwell Amulet", minAP: 112, maxAP: 120 },
+    { type: "Amulet", name: "PEN: Ultimate Krea Amulet", minAP: 113, maxAP: 119 },
+    { type: "Amulet", name: "PEN: Ultimate Bares Amulet", minAP: 107, maxAP: 115 },
+    { type: "Amulet", name: "PEN: Ultimate Ain Amulet", minAP: 106, maxAP: 114 },
+    { type: "Amulet", name: "PEN: Ultimate Elsh Amulet", minAP: 106, maxAP: 114 },
+    { type: "Amulet", name: "PEN: Ultimate Seleth Amulet", minAP: 106, maxAP: 114 },
+    { type: "Amulet", name: "PEN: Tuvala Amulet", minAP: 114, maxAP: 118 },
+    { type: "Pendulum", name: "PEN: Tuvala Crescent Pendulum", minAP: 114, maxAP: 118 },
+    { type: "", name: "", minAP: 999, maxAP: 999 },
+];
+
+// Function to calculate and add average AP to each gear item
+function calculateAverageAP(gear) {
+    return gear.map(item => ({
+        ...item,
+        avgAP: ((item.minAP + item.maxAP) / 2).toFixed(2), // Average AP rounded to 2 decimal places
+    }));
+}
+
+// Generalized sorting function
+function sortGear(gear, criteria) {
+    const gearWithAvg = calculateAverageAP(gear);
+    return gearWithAvg.sort((a, b) => {
+        if (criteria === "minAP") {
+            return a.minAP - b.minAP;
+        } else if (criteria === "maxAP") {
+            return a.maxAP - b.maxAP;
+        } else if (criteria === "avgAP") {
+            return a.avgAP - b.avgAP;
+        } else {
+            throw new Error("Invalid criteria. Use 'minAP', 'maxAP', or 'avgAP'.");
+        }
+    });
+}
+
+// Function to filter and sort by type
+function sortGearByType(gear, type, criteria) {
+    const filteredGear = gear.filter(item => item.type === type);
+    return sortGear(filteredGear, criteria);
+}
+
+// Sorting Examples
+/*
+console.log("All Gear, Sorted by Min AP:");
+console.log(sortGear([...gear], "minAP"));
+
+console.log("All Gear, Sorted by Average AP:");
+console.log(sortGear([...gear], "avgAP"));
+
+console.log("All Gear, Sorted by Max AP:");
+console.log(sortGear([...gear], "maxAP"));
+*/
+
+console.log("All Amulet, Sorted by Min AP:");
+console.log(sortGearByType([...gear], "Amulet", "minAP"));
+
+console.log("All Amulet, Sorted by Average AP:");
+console.log(sortGearByType([...gear], "Amulet", "avgAP"));
+
+console.log("All Amulet, Sorted by Max AP:");
+console.log(sortGearByType([...gear], "Amulet", "maxAP"));

@@ -1,0 +1,49 @@
+// Function to create and insert input fields
+function addInputFields() {
+    // Select all spans with class 'counter_value'
+    const spans = document.querySelectorAll('.counter_value');
+
+    spans.forEach(span => {
+        // Create an input element
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'form-control form-control-sm levelfilter_100 rightalign';
+        input.size = 5;
+        input.maxLength = 10;
+        input.value = span.textContent; // Set the initial value of the input to the span's value
+        input.dataset.rid = span.dataset.rid; // Set the data-rid attribute
+
+        // Insert the input next to the span
+        span.parentNode.insertBefore(input, span.nextSibling);
+
+        // Add an event listener to the input
+        input.addEventListener('input', function () {
+            // Update the span value when the input value changes
+            span.textContent = this.value;
+        });
+    });
+}
+
+// Function to synchronize spans when toggles are clicked
+function synchronizeSpans() {
+    const toggles = document.querySelectorAll('.toggle-image');
+
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+            // Get the associated span
+            const span = this.nextElementSibling.querySelector('.counter_value');
+
+            // If the span exists, sync its value with the input
+            if (span) {
+                const input = span.nextElementSibling;
+                if (input) {
+                    span.textContent = input.value; // Update the span with the current input value
+                }
+            }
+        });
+    });
+}
+
+// Run the functions
+addInputFields();
+synchronizeSpans();
